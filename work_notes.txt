@@ -1,0 +1,10 @@
+套件清單:
+pandas: 數據處理和分析
+numpy: 數組運算
+yfinance: Yahoo Finance的API
+matplotlib: 數據視覺化
+scikit-learn: 預測模型
+seaborn:視覺化
+
+工程進度:
+
