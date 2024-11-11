@@ -1,7 +1,7 @@
 # 數據收集模組
 
-import yfinace as yf
-# import pandas as pd
+import yfinance as yf
+import pandas as pd
 import os
 from datetime import datetime
 
@@ -17,7 +17,7 @@ class collector:
 
     def collection(self, stock_num, start_date="2021-01-01", end_date=None):
         # 讀取時間
-        end_date = datetime.now.strftime("%Y-%M-%D")
+        end_date = datetime.now().strftime("%Y-%m-%d")
 
         try:
             stock = yf.Ticker(stock_num)
@@ -30,8 +30,9 @@ class collector:
             DataFrame.to_csv(file_path)
             return DataFrame
 
-        except ValueError:
-            print("讀取錯誤_data")
+        except Exception as e:
+            print(f"讀取錯誤: {e}")
+            return None
 
     def info_get(self, stock_num):
         # 獲取名稱、產業別
@@ -43,6 +44,6 @@ class collector:
                 'industry': info.get('industry', '')
             }
 
-        except ValueError:
-            print("讀取錯誤_info")
+        except Exception as e:
+            print(f"讀取錯誤: {e}")
             return None

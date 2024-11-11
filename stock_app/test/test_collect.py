@@ -1,7 +1,7 @@
 # 數據收集模組測試
 import unittest
 import os
-from collect import collector
+from stock_app.src.collect import collector
 
 
 class test_collect(unittest.TestCase):
@@ -18,9 +18,15 @@ class test_collect(unittest.TestCase):
         # 檢查不為None
         self.assertIsNotNone(DataFrame)
         # 檢查大於0
-        self.asserGreater(len(DataFrame), 0)
-        file_path = os.path.join("test_data", f"{self.symbol}.csv")
+        self.assertGreater(len(DataFrame), 0)
+        file_path = os.path.join("test_data", f"{self.stock_num}.csv")
         self.assertTrue(os.path.exists(file_path))
+
+    def test_info_get(self):
+        info = self.collector.info_get(self.stock_num)
+        self.assertIsInstance(info, dict)
+        self.assertIn('name', info)
+        self.assertIn('industry', info)
 
     def tearDown(self):
         # 清理資料夾
@@ -28,3 +34,7 @@ class test_collect(unittest.TestCase):
             for file in os.listdir("test_data"):
                 os.remove(os.path.join("test_data", file))
             os.rmdir("test_data")
+
+
+if __name__ == "__main__":
+    unittest.main()
