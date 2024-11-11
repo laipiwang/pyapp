@@ -1,7 +1,7 @@
 # 數據收集模組
 
 import yfinance as yf
-import pandas as pd
+import pandas
 import os
 from datetime import datetime
 

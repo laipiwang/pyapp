@@ -7,4 +7,5 @@ scikit-learn: 預測模型
 seaborn:視覺化
 
 工程進度:
+collect測試通過，測試樣本為 0050.TW 2357.TW
 
