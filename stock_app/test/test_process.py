@@ -15,45 +15,46 @@ class test_processor(unittest.TestCase):
         self.Data = pd.DataFrame(data)
         self.processor = processor()
 
-    def test_empty_and_none_data(self):
+    def test_empty_data(self):
         # 測試空數據和 None
         self.assertIsNone(self.processor.process(None),
-                          "None input should return None")
+                          "測試回傳:None input沒有回傳None")
         self.assertIsNone(
                 self.processor.process(pd.DataFrame()),
-                "Empty DataFrame should return None"
+                "測試回傳:空資料沒有回傳None"
                           )
 
     def test_missing_columns(self):
         # 測試缺少必要欄位
         df_missing_close = pd.DataFrame({'Volume': [100]})
         self.assertIsNone(self.processor.process(df_missing_close),
-                          "Missing 'Close' column should return None")
+                          "測試回傳:找不到Volume所以回傳None")
 
         data_close = self.Data.drop(columns=['Close'])
         result = self.processor.process(data_close)
         self.assertIsNone(result,
-                          "Data missing 'Close' column should return None")
+                          "測試回傳:找不到收盤價所以回傳None")
 
     def test_valid_data_processing(self):
         # 測試正常數據
         result = self.processor.process(self.Data)
         self.assertIsNotNone(result,
-                             "Valid data should return processed DataFrame")
+                             "測試正常數據:應該回傳資料框")
         self.assertGreater(len(result), 0,
-                           "Processed DataFrame should not be empty")
+                           "測試正常數據:處理過的資料空不應該為空")
 
+        # list_col = ['MA' + f'{i}' for i in self.processor.list_of_ma]
         list_col = ['MA5', 'MA20', 'MA60', 'MA120', 'Returns', 'Volume_MA5']
         for col in list_col:
             self.assertIn(col, result.columns,
-                          f"{col} not found in the processed result columns")
+                          f"沒有找到{col}在處理過的數據裡")
 
     def test_dropna_removal(self):
         # 測試 dropna 是否能正確移除空值
         self.Data.loc[2, 'Close'] = None  # 將某個數值設為 NaN
         result = self.processor.process(self.Data)
         self.assertNotIn(None, result['Close'].values,
-                         "NaN values in 'Close' column should be removed")
+                         "測試回傳:收盤價裡面的空值應該要被移除")
 
     def test_invalid_data_handling(self):
         # 測試無效數據
@@ -63,7 +64,7 @@ class test_processor(unittest.TestCase):
             'Volume': [1] * 5
         })
         self.assertIsNone(self.processor.process(df_invalid),
-                          "Data with all NaN 'Close' values should return None"
+                          "測試回傳:收盤價裡面的無效值應該被移除"
                           )
 
 

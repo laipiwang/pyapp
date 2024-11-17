@@ -4,7 +4,9 @@ import os
 
 
 class processor:
-    def process(self, DataF=None):
+    def process(self, DataF=None, list_of_ma=None):
+        if list_of_ma is None:
+            list_of_ma = [5, 20, 60, 120]
         # 1. 基本檢查
         if DataF is None:
             print("輸入數據為 None")
@@ -18,7 +20,7 @@ class processor:
             print("輸入數據為空")
             return None
 
-        # 2. 深度複製數據
+        # 2. 深度複製
         process_DataFrame = DataF.copy(deep=True)
 
         # 3. 檢查必要欄位
@@ -30,10 +32,10 @@ class processor:
                    process_DataFrame.columns for col in required_columns):
             missing_cols = [col for col in required_columns if col not in
                             process_DataFrame.columns]
-            print(f"缺少必要欄位: {missing_cols}")
+            print(f"非測試回傳:缺少必要欄位: {missing_cols}")
             return None
 
-        # 4. 數據類型轉換前先處理可能的空值
+        # 4. 處理空值
         process_DataFrame = process_DataFrame.dropna(
             subset=['Date', 'Close', 'Volume'])
 
@@ -50,35 +52,32 @@ class processor:
                 process_DataFrame['Date'] = pd.to_datetime(
                     process_DataFrame['Date'])
         except Exception as e:
-            print(f"數據類型轉換失敗: {str(e)}")
+            print(f"非測試回傳:數據類型轉換失敗: {str(e)}")
             return None
 
-        # 6. 檢查數據有效性
+        # 6. 檢查數據是否為空的
         if len(process_DataFrame) == 0:
-            print("有效數據為空")
+            print("非測試回傳:有效數據為空")
             return None
 
         if process_DataFrame['Close'].isna().all()\
                 or process_DataFrame['Volume'].isna().all():
-            print("Close 或 Volume 列包含全部空值")
+            print("非測試回傳:Close 或 Volume 列包含全部空值")
             return None
 
-        # 7. 確保日期排序
+        # 7. 日期排序
         process_DataFrame = process_DataFrame.sort_values('Date')
 
         # 8. 計算技術指標
         rolling_windows = {
-            'MA5': 5,
-            'MA20': 20,
-            'MA60': 60,
-            'MA120': 120
+            'MA' + str(i): i for i in list_of_ma
         }
 
         rolling_count = len(process_DataFrame)
         for ma_name, window in rolling_windows.items():
             if rolling_count >= window:
                 process_DataFrame[ma_name] = \
-                    process_DataFrame['Close'].rolling(window=window).mean()
+                    process_DataFrame['Close'].rolling(window).mean()
 
         # 計算變化量和成交量移動平均
         process_DataFrame['Returns'] = process_DataFrame['Close'].pct_change()
@@ -89,7 +88,7 @@ class processor:
         process_DataFrame = process_DataFrame.dropna()
 
         if len(process_DataFrame) == 0:
-            print("處理後數據為空")
+            print("非測試回傳:處理後數據為空")
             return None
 
         # 輸出處理結果資訊
