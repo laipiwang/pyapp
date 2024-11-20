@@ -1,0 +1,198 @@
+2024-11-20 20:08:24,831 - stock_analysis - INFO - 日誌系統初始化完成，日誌文件: logs\stock_analysis_20241120.log
+2024-11-20 20:08:24,832 - stock_analysis - ERROR - 執行 initialize_components 時發生錯誤: 'analysis'
+2024-11-20 20:08:24,832 - stock_analysis - ERROR - 詳細錯誤信息:
+Traceback (most recent call last):
+  File "C:\Users\USER\pyapp\stock_app\src\utils\decorators.py", line 23, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\USER\pyapp\stock_app\main.py", line 28, in initialize_components
+    self.analyzer = Analyzer()
+                    ~~~~~~~~^^
+  File "C:\Users\USER\pyapp\stock_app\src\analyze.py", line 17, in __init__
+    self.analysis_params = self.config['analysis']
+                           ~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'analysis'
+2024-11-20 20:10:16,620 - stock_analysis - INFO - 日誌系統初始化完成，日誌文件: logs\stock_analysis_20241120.log
+2024-11-20 20:11:29,354 - stock_analysis - INFO - 日誌系統初始化完成，日誌文件: logs\stock_analysis_20241120.log
+2024-11-20 20:46:56,631 - stock_analysis - INFO - 日誌系統初始化完成，日誌文件: logs\stock_analysis_20241120.log
+2024-11-20 20:47:47,739 - stock_analysis - INFO - 日誌系統初始化完成，日誌文件: logs\stock_analysis_20241120.log
+2024-11-20 20:47:47,740 - stock_analysis - INFO - 開始收集 2330 的數據...
+2024-11-20 20:47:51,139 - stock_analysis.collector - INFO - 數據已保存到: data\2330.csv
+2024-11-20 20:47:51,139 - stock_analysis.collector - INFO - 成功下載數據: 2330
+2024-11-20 20:47:51,340 - stock_analysis.collector - INFO - 成功獲取股票信息: 2330
+2024-11-20 20:47:51,341 - stock_analysis - INFO - 處理數據...
+2024-11-20 20:47:51,353 - stock_analysis.processor - ERROR - 計算技術指標時發生錯誤: 'period'
+2024-11-20 20:47:51,354 - stock_analysis - ERROR - 數據處理失敗
+2024-11-20 20:47:51,354 - stock_analysis - INFO - run 執行時間: 3.61 秒
+2024-11-20 20:47:51,355 - stock_analysis - INFO - 開始收集 2317 的數據...
+2024-11-20 20:47:51,688 - stock_analysis.collector - INFO - 數據已保存到: data\2317.csv
+2024-11-20 20:47:51,689 - stock_analysis.collector - INFO - 成功下載數據: 2317
+2024-11-20 20:47:51,890 - stock_analysis.collector - INFO - 成功獲取股票信息: 2317
+2024-11-20 20:47:51,891 - stock_analysis - INFO - 處理數據...
+2024-11-20 20:47:51,895 - stock_analysis.processor - ERROR - 計算技術指標時發生錯誤: 'period'
+2024-11-20 20:47:51,896 - stock_analysis - ERROR - 數據處理失敗
+2024-11-20 20:47:51,897 - stock_analysis - INFO - run 執行時間: 0.54 秒
+2024-11-20 20:51:53,792 - stock_analysis - INFO - 日誌系統初始化完成，日誌文件: logs\stock_analysis_20241120.log
+2024-11-20 20:51:53,793 - stock_analysis - INFO - 開始收集 2330 的數據...
+2024-11-20 20:51:53,811 - stock_analysis.collector - WARNING - 讀取緩存失敗: 'date'
+2024-11-20 20:51:54,354 - stock_analysis.collector - INFO - 數據已保存到: data\2330.csv
+2024-11-20 20:51:54,354 - stock_analysis.collector - INFO - 成功下載數據: 2330
+2024-11-20 20:51:54,550 - stock_analysis.collector - INFO - 成功獲取股票信息: 2330
+2024-11-20 20:51:54,550 - stock_analysis - INFO - 處理數據...
+2024-11-20 20:51:54,559 - stock_analysis.processor - ERROR - 計算技術指標時發生錯誤: 'period'
+2024-11-20 20:51:54,560 - stock_analysis - ERROR - 數據處理失敗
+2024-11-20 20:51:54,560 - stock_analysis - INFO - run 執行時間: 0.77 秒
+2024-11-20 20:51:54,562 - stock_analysis - INFO - 開始收集 2317 的數據...
+2024-11-20 20:51:54,575 - stock_analysis.collector - WARNING - 讀取緩存失敗: 'date'
+2024-11-20 20:51:54,836 - stock_analysis.collector - INFO - 數據已保存到: data\2317.csv
+2024-11-20 20:51:54,837 - stock_analysis.collector - INFO - 成功下載數據: 2317
+2024-11-20 20:51:55,027 - stock_analysis.collector - INFO - 成功獲取股票信息: 2317
+2024-11-20 20:51:55,027 - stock_analysis - INFO - 處理數據...
+2024-11-20 20:51:55,032 - stock_analysis.processor - ERROR - 計算技術指標時發生錯誤: 'period'
+2024-11-20 20:51:55,033 - stock_analysis - ERROR - 數據處理失敗
+2024-11-20 20:51:55,034 - stock_analysis - INFO - run 執行時間: 0.47 秒
+2024-11-20 20:54:40,055 - stock_analysis - INFO - 日誌系統初始化完成，日誌文件: logs\stock_analysis_20241120.log
+2024-11-20 20:54:40,056 - stock_analysis - INFO - 開始收集 2330 的數據...
+2024-11-20 20:54:40,072 - stock_analysis.collector - WARNING - 讀取緩存失敗: 'date'
+2024-11-20 20:54:40,732 - stock_analysis.collector - INFO - 數據已保存到: data\2330.csv
+2024-11-20 20:54:40,732 - stock_analysis.collector - INFO - 成功下載數據: 2330
+2024-11-20 20:54:40,954 - stock_analysis.collector - INFO - 成功獲取股票信息: 2330
+2024-11-20 20:54:40,954 - stock_analysis - INFO - 處理數據...
+2024-11-20 20:54:40,969 - stock_analysis - INFO - 分析數據...
+2024-11-20 20:54:40,971 - stock_analysis.analyzer - ERROR - 分析過程發生錯誤: 'trend_strength'
+2024-11-20 20:54:40,971 - stock_analysis - ERROR - 數據分析失敗
+2024-11-20 20:54:40,971 - stock_analysis - INFO - run 執行時間: 0.92 秒
+2024-11-20 20:54:40,972 - stock_analysis - INFO - 開始收集 2317 的數據...
+2024-11-20 20:54:40,983 - stock_analysis.collector - WARNING - 讀取緩存失敗: 'date'
+2024-11-20 20:54:41,488 - stock_analysis.collector - INFO - 數據已保存到: data\2317.csv
+2024-11-20 20:54:41,489 - stock_analysis.collector - INFO - 成功下載數據: 2317
+2024-11-20 20:54:41,686 - stock_analysis.collector - INFO - 成功獲取股票信息: 2317
+2024-11-20 20:54:41,687 - stock_analysis - INFO - 處理數據...
+2024-11-20 20:54:41,697 - stock_analysis - INFO - 分析數據...
+2024-11-20 20:54:41,698 - stock_analysis.analyzer - ERROR - 分析過程發生錯誤: 'trend_strength'
+2024-11-20 20:54:41,699 - stock_analysis - ERROR - 數據分析失敗
+2024-11-20 20:54:41,700 - stock_analysis - INFO - run 執行時間: 0.73 秒
+2024-11-20 21:05:27,693 - stock_analysis - INFO - 日誌系統初始化完成，日誌文件: logs\stock_analysis_20241120.log
+2024-11-20 21:05:27,694 - stock_analysis - INFO - 開始收集 2330 的數據...
+2024-11-20 21:05:27,720 - stock_analysis.collector - WARNING - 讀取緩存失敗: Cannot compare tz-naive and tz-aware timestamps
+2024-11-20 21:05:28,293 - stock_analysis.collector - INFO - 數據已保存到: data\2330.csv
+2024-11-20 21:05:28,294 - stock_analysis.collector - INFO - 成功下載數據: 2330
+2024-11-20 21:05:28,499 - stock_analysis.collector - INFO - 成功獲取股票信息: 2330
+2024-11-20 21:05:28,499 - stock_analysis - INFO - 處理數據...
+2024-11-20 21:05:28,503 - stock_analysis.processor - ERROR - 無法獲取布林通道週期參數
+2024-11-20 21:05:28,504 - stock_analysis - ERROR - 數據處理失敗
+2024-11-20 21:05:28,504 - stock_analysis - INFO - run 執行時間: 0.81 秒
+2024-11-20 21:05:28,505 - stock_analysis - INFO - 開始收集 2317 的數據...
+2024-11-20 21:05:28,521 - stock_analysis.collector - WARNING - 讀取緩存失敗: Cannot compare tz-naive and tz-aware timestamps
+2024-11-20 21:05:28,714 - stock_analysis.collector - INFO - 數據已保存到: data\2317.csv
+2024-11-20 21:05:28,715 - stock_analysis.collector - INFO - 成功下載數據: 2317
+2024-11-20 21:05:28,925 - stock_analysis.collector - INFO - 成功獲取股票信息: 2317
+2024-11-20 21:05:28,926 - stock_analysis - INFO - 處理數據...
+2024-11-20 21:05:28,930 - stock_analysis.processor - ERROR - 無法獲取布林通道週期參數
+2024-11-20 21:05:28,931 - stock_analysis - ERROR - 數據處理失敗
+2024-11-20 21:05:28,931 - stock_analysis - INFO - run 執行時間: 0.43 秒
+2024-11-20 21:05:53,786 - stock_analysis - INFO - 日誌系統初始化完成，日誌文件: logs\stock_analysis_20241120.log
+2024-11-20 21:05:53,787 - stock_analysis - INFO - 開始收集 2330 的數據...
+2024-11-20 21:05:53,807 - stock_analysis.collector - WARNING - 讀取緩存失敗: Cannot compare tz-naive and tz-aware timestamps
+2024-11-20 21:05:54,377 - stock_analysis.collector - INFO - 數據已保存到: data\2330.csv
+2024-11-20 21:05:54,377 - stock_analysis.collector - INFO - 成功下載數據: 2330
+2024-11-20 21:05:54,536 - stock_analysis.collector - INFO - 成功獲取股票信息: 2330
+2024-11-20 21:05:54,536 - stock_analysis - INFO - 處理數據...
+2024-11-20 21:05:54,542 - stock_analysis.processor - ERROR - 無法獲取布林通道週期參數
+2024-11-20 21:05:54,542 - stock_analysis - ERROR - 數據處理失敗
+2024-11-20 21:05:54,542 - stock_analysis - INFO - run 執行時間: 0.75 秒
+2024-11-20 21:05:54,543 - stock_analysis - INFO - 開始收集 2317 的數據...
+2024-11-20 21:05:54,560 - stock_analysis.collector - WARNING - 讀取緩存失敗: Cannot compare tz-naive and tz-aware timestamps
+2024-11-20 21:05:54,740 - stock_analysis.collector - INFO - 數據已保存到: data\2317.csv
+2024-11-20 21:05:54,741 - stock_analysis.collector - INFO - 成功下載數據: 2317
+2024-11-20 21:05:54,874 - stock_analysis.collector - INFO - 成功獲取股票信息: 2317
+2024-11-20 21:05:54,875 - stock_analysis - INFO - 處理數據...
+2024-11-20 21:05:54,880 - stock_analysis.processor - ERROR - 無法獲取布林通道週期參數
+2024-11-20 21:05:54,880 - stock_analysis - ERROR - 數據處理失敗
+2024-11-20 21:05:54,881 - stock_analysis - INFO - run 執行時間: 0.34 秒
+2024-11-20 21:17:58,169 - stock_analysis - INFO - 日誌系統初始化完成，日誌文件: logs\stock_analysis_20241120.log
+2024-11-20 21:17:58,171 - stock_analysis - INFO - 開始收集 2330 的數據...
+2024-11-20 21:17:58,188 - stock_analysis.collector - WARNING - 讀取緩存失敗: 'date'
+2024-11-20 21:17:58,740 - stock_analysis.collector - INFO - 數據已保存到: data\2330.csv
+2024-11-20 21:17:58,741 - stock_analysis.collector - INFO - 成功下載數據: 2330
+2024-11-20 21:17:58,957 - stock_analysis.collector - INFO - 成功獲取股票信息: 2330
+2024-11-20 21:17:58,958 - stock_analysis - INFO - 處理數據...
+2024-11-20 21:17:58,963 - stock_analysis.processor - ERROR - 無法獲取布林通道週期參數
+2024-11-20 21:17:58,964 - stock_analysis - ERROR - 數據處理失敗
+2024-11-20 21:17:58,964 - stock_analysis - INFO - run 執行時間: 0.79 秒
+2024-11-20 21:17:58,965 - stock_analysis - INFO - 開始收集 2317 的數據...
+2024-11-20 21:17:58,980 - stock_analysis.collector - WARNING - 讀取緩存失敗: 'date'
+2024-11-20 21:17:59,186 - stock_analysis.collector - INFO - 數據已保存到: data\2317.csv
+2024-11-20 21:17:59,187 - stock_analysis.collector - INFO - 成功下載數據: 2317
+2024-11-20 21:17:59,406 - stock_analysis.collector - INFO - 成功獲取股票信息: 2317
+2024-11-20 21:17:59,407 - stock_analysis - INFO - 處理數據...
+2024-11-20 21:17:59,415 - stock_analysis.processor - ERROR - 無法獲取布林通道週期參數
+2024-11-20 21:17:59,415 - stock_analysis - ERROR - 數據處理失敗
+2024-11-20 21:17:59,416 - stock_analysis - INFO - run 執行時間: 0.45 秒
+2024-11-20 21:23:45,310 - stock_analysis - INFO - 日誌系統初始化完成，日誌文件: logs\stock_analysis_20241120.log
+2024-11-20 21:23:45,311 - stock_analysis - INFO - 開始收集 2330 的數據...
+2024-11-20 21:23:45,325 - stock_analysis.collector - WARNING - 讀取緩存失敗: 'date'
+2024-11-20 21:23:45,886 - stock_analysis.collector - INFO - 數據已保存到: data\2330.csv
+2024-11-20 21:23:45,886 - stock_analysis.collector - INFO - 成功下載數據: 2330
+2024-11-20 21:23:46,086 - stock_analysis.collector - INFO - 成功獲取股票信息: 2330
+2024-11-20 21:23:46,086 - stock_analysis - INFO - 處理數據...
+2024-11-20 21:23:46,095 - stock_analysis.processor - ERROR - 數據處理失敗: 'period'
+2024-11-20 21:23:46,096 - stock_analysis - ERROR - 數據處理失敗
+2024-11-20 21:23:46,096 - stock_analysis - INFO - run 執行時間: 0.78 秒
+2024-11-20 21:23:46,097 - stock_analysis - INFO - 開始收集 2317 的數據...
+2024-11-20 21:23:46,108 - stock_analysis.collector - WARNING - 讀取緩存失敗: 'date'
+2024-11-20 21:23:46,339 - stock_analysis.collector - INFO - 數據已保存到: data\2317.csv
+2024-11-20 21:23:46,340 - stock_analysis.collector - INFO - 成功下載數據: 2317
+2024-11-20 21:23:46,551 - stock_analysis.collector - INFO - 成功獲取股票信息: 2317
+2024-11-20 21:23:46,552 - stock_analysis - INFO - 處理數據...
+2024-11-20 21:23:46,560 - stock_analysis.processor - ERROR - 數據處理失敗: 'period'
+2024-11-20 21:23:46,561 - stock_analysis - ERROR - 數據處理失敗
+2024-11-20 21:23:46,562 - stock_analysis - INFO - run 執行時間: 0.47 秒
+2024-11-20 21:45:34,032 - stock_analysis - INFO - 日誌系統初始化完成，日誌文件: logs\stock_analysis_20241120.log
+2024-11-20 21:45:34,033 - stock_analysis - INFO - 開始收集 2330 的數據...
+2024-11-20 21:45:34,046 - stock_analysis.collector - WARNING - 讀取緩存失敗: 'date'
+2024-11-20 21:45:34,654 - stock_analysis.collector - INFO - 數據已保存到: data\2330.csv
+2024-11-20 21:45:34,655 - stock_analysis.collector - INFO - 成功下載數據: 2330
+2024-11-20 21:45:34,880 - stock_analysis.collector - INFO - 成功獲取股票信息: 2330
+2024-11-20 21:45:34,881 - stock_analysis - INFO - 處理數據...
+2024-11-20 21:45:34,894 - stock_analysis - INFO - 分析數據...
+2024-11-20 21:45:35,902 - stock_analysis.analyzer - ERROR - 預測失敗: at least one array or dtype is required
+2024-11-20 21:45:35,902 - stock_analysis - INFO - 生成視覺化結果...
+2024-11-20 21:45:37,135 - stock_analysis - INFO - 結果已保存到: output\analysis_20241120_214537.json
+2024-11-20 21:45:37,396 - stock_analysis.visualizer - INFO - 已保存圖表: output\price_chart.html
+2024-11-20 21:45:37,441 - stock_analysis.visualizer - INFO - 已保存圖表: output\technical_indicators.html
+2024-11-20 21:45:37,471 - stock_analysis.visualizer - INFO - 已保存圖表: output\volume_analysis.html
+2024-11-20 21:45:37,501 - stock_analysis.visualizer - INFO - 已保存圖表: output\pattern_analysis.html
+2024-11-20 21:45:37,529 - stock_analysis.visualizer - INFO - 已保存圖表: output\correlation_matrix.html
+2024-11-20 21:45:37,529 - stock_analysis - INFO - 股票代碼: 2330
+2024-11-20 21:45:37,530 - stock_analysis - INFO - 股票名稱: Taiwan Semiconductor Manufacturing Company Limited
+2024-11-20 21:45:37,530 - stock_analysis - INFO - 當前價格: 1040.00
+2024-11-20 21:45:37,530 - stock_analysis - INFO - 20日均線: 0.00
+2024-11-20 21:45:37,531 - stock_analysis - INFO - RSI: 0.00
+2024-11-20 21:45:37,531 - stock_analysis - INFO - MACD: 0.00
+2024-11-20 21:45:37,531 - stock_analysis - INFO - 趨勢: Unknown
+2024-11-20 21:45:37,531 - stock_analysis - INFO - 分析時間: 2024-11-20 21:45:37
+2024-11-20 21:45:37,532 - stock_analysis - INFO - run 執行時間: 3.50 秒
+2024-11-20 21:45:37,532 - stock_analysis - INFO - 開始收集 2317 的數據...
+2024-11-20 21:45:37,543 - stock_analysis.collector - WARNING - 讀取緩存失敗: 'date'
+2024-11-20 21:45:37,727 - stock_analysis.collector - INFO - 數據已保存到: data\2317.csv
+2024-11-20 21:45:37,727 - stock_analysis.collector - INFO - 成功下載數據: 2317
+2024-11-20 21:45:37,936 - stock_analysis.collector - INFO - 成功獲取股票信息: 2317
+2024-11-20 21:45:37,937 - stock_analysis - INFO - 處理數據...
+2024-11-20 21:45:37,944 - stock_analysis - INFO - 分析數據...
+2024-11-20 21:45:37,948 - stock_analysis.analyzer - ERROR - 預測失敗: at least one array or dtype is required
+2024-11-20 21:45:37,949 - stock_analysis - INFO - 生成視覺化結果...
+2024-11-20 21:45:38,045 - stock_analysis - INFO - 結果已保存到: output\analysis_20241120_214538.json
+2024-11-20 21:45:38,076 - stock_analysis.visualizer - INFO - 已保存圖表: output\price_chart.html
+2024-11-20 21:45:38,120 - stock_analysis.visualizer - INFO - 已保存圖表: output\technical_indicators.html
+2024-11-20 21:45:38,150 - stock_analysis.visualizer - INFO - 已保存圖表: output\volume_analysis.html
+2024-11-20 21:45:38,182 - stock_analysis.visualizer - INFO - 已保存圖表: output\pattern_analysis.html
+2024-11-20 21:45:38,213 - stock_analysis.visualizer - INFO - 已保存圖表: output\correlation_matrix.html
+2024-11-20 21:45:38,214 - stock_analysis - INFO - 股票代碼: 2317
+2024-11-20 21:45:38,214 - stock_analysis - INFO - 股票名稱: Hon Hai Precision Industry Co., Ltd.
+2024-11-20 21:45:38,214 - stock_analysis - INFO - 當前價格: 203.50
+2024-11-20 21:45:38,214 - stock_analysis - INFO - 20日均線: 0.00
+2024-11-20 21:45:38,215 - stock_analysis - INFO - RSI: 0.00
+2024-11-20 21:45:38,215 - stock_analysis - INFO - MACD: 0.00
+2024-11-20 21:45:38,215 - stock_analysis - INFO - 趨勢: Unknown
+2024-11-20 21:45:38,215 - stock_analysis - INFO - 分析時間: 2024-11-20 21:45:38
+2024-11-20 21:45:38,215 - stock_analysis - INFO - run 執行時間: 0.68 秒

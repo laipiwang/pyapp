@@ -1,0 +1,161 @@
+default_symbols:
+  - "2330"  # 台積電
+  - "2317"  # 鴻海
+
+# ... (其他配置保持不變)
+# 基本設置
+base:
+  output_dir: "output"
+  logs_dir: "logs"
+  data_dir: "data"
+
+# 資料收集設置
+data_collection:
+  default_start_date: "2023-01-01"
+  default_end_date: "2024-11-20"
+  providers:
+    - "yfinance"
+    - "twse"
+  retry:
+    max_attempts: 3
+    delay_seconds: 1
+
+# 技術指標參數設定
+technical_indicators:
+  ma:
+    ma5: 5
+    ma10: 10
+    ma20: 20
+    ma30: 30
+    ma60: 60
+    ma120: 120
+  macd:
+    fast_period: 12
+    slow_period: 26
+    signal_period: 9
+  rsi:
+    period: 14
+  bollinger_bands:
+    period: 20
+    std_multiplier: 2
+  atr:
+    period: 14
+
+# 資料處理設定
+data_processing:
+  required_columns:
+    - open
+    - high
+    - low
+    - close
+    - volume
+  date_column: date
+  dropna: true
+  time_range: 20
+
+# 趨勢判斷設定
+trend:
+  ma_reference: ma_20
+  threshold:
+    upper: 0
+    lower: 0
+
+# 資料驗證設定
+validation:
+  min_periods: 30
+  max_missing_pct: 0.1
+
+# 技術分析參數
+technical_analysis:
+  moving_averages:
+    periods: [5, 10, 20, 60]
+    types: ["SMA", "EMA"]
+  rsi:
+    period: 14
+    overbought: 70
+    oversold: 30
+  macd:
+    short_period: 12
+    long_period: 26
+    signal_period: 9
+  bollinger_bands:
+    period: 20
+    std_dev: 2
+
+# 分析參數設置
+analysis:
+  trend:
+    short_term: 5
+    medium_term: 20
+    long_term: 60
+  pattern:
+    doji_threshold: 0.1
+    hammer_threshold: 2.0
+  support_resistance:
+    window: 20
+    min_touches: 2
+  prediction:
+    window: 20
+    confidence_threshold: 0.7
+  risk:
+    var_confidence: 0.95
+    risk_free_rate: 0.02
+  indicators:
+    rsi_oversold: 30
+    rsi_overbought: 70
+    macd_signal: "cross"
+    bb_threshold: 2.0
+
+# 視覺化設置
+visualization:
+  style: "seaborn"
+  theme: "plotly_dark"
+  figsize: [15, 10]
+  dpi: 100
+  save_format: "png"
+  colors:
+    up: "#00ff00"
+    down: "#ff0000"
+    line: "#ffffff"
+    volume: "#888888"
+
+# 模型設置
+models:
+  random_forest:
+    n_estimators: 100
+    max_depth: 10
+    min_samples_split: 2
+    min_samples_leaf: 1
+    random_state: 42
+  lstm:
+    units: 50
+    epochs: 100
+    batch_size: 32
+    dropout_rate: 0.2
+
+# 日誌設置
+logging:
+  version: 1
+  disable_existing_loggers: false
+  formatters:
+    standard:
+      format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    detailed:
+      format: "%(asctime)s - %(name)s - %(levelname)s - %(pathname)s:%(lineno)d - %(message)s"
+  handlers:
+    file:
+      level: "INFO"
+      class: "logging.handlers.RotatingFileHandler"
+      maxBytes: 10485760
+      backupCount: 5
+      formatter: "detailed"
+      encoding: "utf-8"
+    console:
+      level: "INFO"
+      class: "logging.StreamHandler"
+      formatter: "standard"
+  loggers:
+    stock_analysis:
+      handlers: ["file", "console"]
+      level: "INFO"
+      propagate: true
